@@ -2,3 +2,10 @@ defaults: &DEFAULTS
   host: localhost
   port: 51400
   queue: graylog2
+  gelf_host: localhost
+
+development:
+  <<: *DEFAULTS
+
+production:
+  <<: *DEFAULTS

@@ -9,6 +9,7 @@ module Partyhat
           'host' => 'localhost',
           'port' => 51400
         }.merge DaemonKit::Config.load('partyhat')
+        DaemonKit.logger.info "Partyhat config: #{config.inspect}"
 
         # Open an AMQP channel
         AMQP::Channel.new( amqp_connection ) do |channel|
@@ -56,7 +57,7 @@ module Partyhat
       parts = line[ 16, line.length ].split(' ', 3)
 
       data = {
-        :host => "partyhat",
+        :host => self.config['gelf_host'],
         :level => parts[0],
         :facility => parts[1],
         :short_message => parts[2],

@@ -1,0 +1,2 @@
+require 'amqp'
+require 'json'

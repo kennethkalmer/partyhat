@@ -1,0 +1,1 @@
+$template PartyhatFriendly,"%timestamp% %syslogseverity% %syslogfacility-text% %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
